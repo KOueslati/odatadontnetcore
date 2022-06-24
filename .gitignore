@@ -1,0 +1,37 @@
+## Visual Studio solutions and projects specific files and folders
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+## Unit test results
+TestResults/
+
+## Migration scripts
+/**/_setup/sql/
+
+## StyleCop extension cache
+StyleCop.Cache
+
+## NuGet packages
+packages/
+
+## AXA.CS.Setup generated folders
+webdeploy/
+nuget-build/
+wix-build/
+exe-build/
+
+## NPM node modules
+node_modules/
+
+## Bundle Minifier generated files
+bundles/
+
+## Docker compose files
+# Environment variables of the user
+.env
+
+## Azure Publish
+PublishProfiles/
