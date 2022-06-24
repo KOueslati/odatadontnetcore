@@ -29,7 +29,7 @@ namespace odatasample.Controllers
             context.SaveChanges();
         }
 
-        [HttpGet]
+        [HttpGet("", Name = "GetCustomers")]
         [EnableQuery(AllowedQueryOptions = AllowedQueryOptions.Select | AllowedQueryOptions.OrderBy | AllowedQueryOptions.Filter)]
         [ProducesResponseType(statusCode: StatusCodes.Status200OK, Type = typeof(IEnumerable<Customer>))]
         public IActionResult Get()

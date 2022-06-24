@@ -1,10 +1,12 @@
-using SwaggerGenOpenApi;
+using TestOpenApi;
+using TestOpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<IClient, Client>();
+builder.Services.AddHttpClient<IBooksClient, BooksClient>(httpClient =>
+    httpClient.BaseAddress = new Uri("https://localhost:7144"));
 
 var app = builder.Build();
 

@@ -4,9 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-using web;
-
-namespace SwaggerGenOpenApi
+namespace TestOpenApi
 {
     /// <summary>The Swagger response for specific type</summary>
     /// <typeparam name="TResult">The type of the result.</typeparam>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using SwaggerGenOpenApi;
+using TestOpenApi;
+using TestOpenApi;
 using web.Models;
 
 namespace web.Controllers
@@ -8,17 +9,23 @@ namespace web.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public IClient _HttpClient;
+        public IBooksClient _HttpClient;
 
-        public HomeController(ILogger<HomeController> logger, IClient httpClient)
+        public HomeController(ILogger<HomeController> logger, IBooksClient httpClient)
         {
             _logger = logger;
             _HttpClient = httpClient;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var books = await _HttpClient.BooksGetAsync(null, null, null, null, null, null);
+
+            var listBooks = books.Select(b => new BookModelView()
+            {
+                Author = b.Author, Title = b.Title, Price = b.Price, Id = b.Id
+            }).ToList();
+            return View(listBooks);
         }
 
         public IActionResult Privacy()

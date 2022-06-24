@@ -10,7 +10,7 @@
         "tags": [
           "Books"
         ],
-        "operationId": "BooksAll",
+        "operationId": "GetBooks",
         "parameters": [
           {
             "name": "$select",
@@ -83,7 +83,7 @@
         "tags": [
           "Books"
         ],
-        "operationId": "Books",
+        "operationId": "GetBookById",
         "parameters": [
           {
             "name": "id",
@@ -114,7 +114,7 @@
         "tags": [
           "Customers"
         ],
-        "operationId": "Customers",
+        "operationId": "GetCustomers",
         "parameters": [
           {
             "name": "$select",

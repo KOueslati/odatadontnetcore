@@ -18,6 +18,8 @@ namespace odatasample.Model
         {
             modelBuilder.Entity<Customer>().OwnsOne(c => c.HomeAddress);
             modelBuilder.Entity<Book>().OwnsOne(c => c.Location);
+            modelBuilder.Entity<Book>().OwnsOne(c => c.Press);
+
         }
     }
 }

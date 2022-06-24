@@ -4,7 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace SwaggerGenOpenApi
+namespace TestOpenApi
 {
     /// <summary>
     ///   API Exception copied from NSwag generation.

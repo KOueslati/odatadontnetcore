@@ -24,23 +24,21 @@ namespace odatasample.Controllers
             foreach (var b in DataSource.GetBooks())
             {
                 context.Books.Add(b);
-                context.Presses.Add(b.Press);
+                //context.Presses.Add(b.Press);
             }
             context.SaveChanges();
         }
 
         // GET: api/Books
         [EnableQuery]
-        [ActionName("GetBooks")]
-        [HttpGet("v1/Books")]
+        [HttpGet("v1/Books", Name = "GetBooks")]
         public async Task<ActionResult<IEnumerable<Book>>> GetAll()
         {
             return await _context.Books.ToListAsync();
         }
 
         // GET: api/Books/5
-        [ActionName("GetBookById")]
-        [HttpGet("v1/Books/{id}")]
+        [HttpGet("v1/Books/{id}", Name = "GetBookById")]
         public async Task<ActionResult<Book>> Get(int id)
         {
             var book = await _context.Books.FindAsync(id);
