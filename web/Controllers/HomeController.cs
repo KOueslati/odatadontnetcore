@@ -19,7 +19,7 @@ namespace web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var books = await _HttpClient.BooksGetAsync(null, null, null, null, null, null);
+            var books = await _HttpClient.GetBooksAsync(null, null, null, null, null, null);
 
             var listBooks = books.Select(b => new BookModelView()
             {
